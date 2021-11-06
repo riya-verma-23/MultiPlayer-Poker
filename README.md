@@ -3,7 +3,7 @@
 Fe2O3
 Sanya Sharma, Riya Verma, Rahul Gupta
 
-Project Introduction
+Project Introduction: We want to make a fun and interactive poker game that can be played on multiple devices. Our goal is to provide a entertaining platform for poker players online. We've chosen to work on this project because we love to play poker. 
 
 Please provide a brief description of your project. List the goals and objectives of your project and explain why you’ve chosen to work on this project.
 
