@@ -1,16 +1,20 @@
 use std::collections::HashMap;
 
 struct Deck {
-    card_deck: HashMap<Suit,i32>,
+    card_deck: Vec<Card>,
 }
 
 impl Deck {
     pub fn new() -> Deck {
-        let deck_map: HashMap<Suit,i32> = HashMap::new();
+        let deck: Vec<Card> = Vec::new();
 
         for i in 1..13 {
             for j in 1..4 {
-                deck_map.insert(IntToSuit(j), i);
+                let c = Card {
+                    val = i;
+                    suit = IntToSuit(j);
+                }
+                deck.pushback(c);
             }
         }
 
@@ -20,5 +24,5 @@ impl Deck {
         return deck;
     }
 
-    
+
 }
