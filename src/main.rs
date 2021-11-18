@@ -1,5 +1,5 @@
 
 
 fn main () {
-    println!("Welcome to Poker");
+    println!("Welcome to Blackjack");
 }
