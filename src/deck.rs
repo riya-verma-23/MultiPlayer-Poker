@@ -1,5 +1,3 @@
-use std::collections::HashMap;
-
 struct Deck {
     card_deck: Vec<Card>,
 }
