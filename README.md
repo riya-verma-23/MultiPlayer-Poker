@@ -1,4 +1,4 @@
-# Multiplayer-Poker-Rust
+# Blackjack
 
 Fe2O3
 Sanya Sharma, Riya Verma, Rahul Gupta
