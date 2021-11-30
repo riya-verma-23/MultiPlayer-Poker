@@ -1,6 +1,5 @@
-use std::collections::HashMap;
-
-struct Deck {
+pub mod card;
+pub struct Deck {
     card_deck: Vec<Card>,
 }
 
@@ -11,15 +10,11 @@ impl Deck {
         for i in 1..13 {
             for j in 1..4 {
                 let c = Card {
-                    val = i;
-                    suit = IntToSuit(j);
-                }
+                    val : i,
+                    suit : card::IntToSuit(j),
+                };
                 deck.pushback(c);
             }
-        }
-
-        let deck = Deck {
-            card_deck = deck_map;
         }
         return deck;
     }
