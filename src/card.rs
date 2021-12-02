@@ -50,5 +50,4 @@ pub fn IntToSuit(s : i32) -> Result<Suit,()> {
         4 => Ok(Suit::Spade),
         _ => Err(())
     }
-
 }

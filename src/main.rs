@@ -7,8 +7,8 @@ use crate::deck::Deck;
 
 fn main () {
     println!("Welcome to Poker");
-    let mycard : Card = Card::randomCard();
-    mycard.PrintCard();
+    // let mycard : Card = Card::randomCard();
+    // mycard.PrintCard();
     let mydeck : Deck = Deck::new();
     mydeck.PrintDeck();
 }
