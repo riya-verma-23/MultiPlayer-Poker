@@ -1,5 +1,10 @@
 pub use crate::card::IntToSuit;
 pub use crate::card::Card;
+use rand::{thread_rng, Rng};
+extern crate rand;
+use shuffle::shuffler::Shuffler;
+use shuffle::irs::Irs;
+use rand::rngs::mock::StepRng;
 
 pub struct Deck {
     card_deck: Vec<Card>,
@@ -11,7 +16,7 @@ impl Deck {
 
         for i in 1..14 {
             for j in 1..5 {
-                let c : Card = Card::new(IntToSuit(j).unwrap(), i);
+                let c : Card = Card::new(j, i);
                 deck.push(c);
             }
         }
@@ -28,6 +33,16 @@ impl Deck {
         }
 
     }
+
+    pub fn shuffle(&mut self) {
+        // let slice = self.as_mut_slice();
+        // thread_rng().shuffle(slice);
+        let mut rng = StepRng::new(2, 13);
+        let mut irs = Irs::default();
+        irs.shuffle(&mut self.card_deck, &mut rng);
+    }
+
+
 
 
 }
