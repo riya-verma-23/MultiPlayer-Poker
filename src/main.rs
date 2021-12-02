@@ -9,6 +9,9 @@ fn main () {
     println!("Welcome to Poker");
     // let mycard : Card = Card::randomCard();
     // mycard.PrintCard();
-    let mydeck : Deck = Deck::new();
+    let mut mydeck : Deck = Deck::new();
+    mydeck.PrintDeck();
+    mydeck.shuffle();
+    print!("\n");
     mydeck.PrintDeck();
 }
