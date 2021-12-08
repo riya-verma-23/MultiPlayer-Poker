@@ -42,6 +42,15 @@ impl Deck {
         irs.shuffle(&mut self.card_deck, &mut rng);
     }
 
+    pub fn GenerateHand(&self) -> Vec<Card> {
+        let mut hand : Vec<Card> = Vec::new();
+        for i in 0..5 {
+            self.card_deck[i].PrintCard();
+            hand.push(self.card_deck[i].clone());
+        }
+        return hand;
+    }
+
 
 
 

@@ -14,4 +14,14 @@ fn main () {
     mydeck.shuffle();
     print!("\n");
     mydeck.PrintDeck();
+    print!("\n\n\n hand\n");
+    mydeck.GenerateHand();
 }
+
+// pub fn scoreHand(hand : Vec<Card>, ) {
+//     let card_values : [i32;5];
+
+//     for i in &card_values {
+        
+//     }
+// }
