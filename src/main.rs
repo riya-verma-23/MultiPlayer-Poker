@@ -10,8 +10,8 @@ fn main () {
     // let mycard : Card = Card::randomCard();
     // mycard.PrintCard();
     let mut mydeck : Deck = Deck::new();
-    mydeck.PrintDeck();
-    mydeck.shuffle();
-    print!("\n");
-    mydeck.PrintDeck();
+    let mycard = mydeck.deal();
+    mycard.PrintCard();
+    // print!("\n");
+    // mydeck.PrintDeck();
 }

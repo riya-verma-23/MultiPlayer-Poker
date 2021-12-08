@@ -42,7 +42,12 @@ impl Deck {
         irs.shuffle(&mut self.card_deck, &mut rng);
     }
 
-
-
-
+    pub fn deal(&mut self) -> Result<Card,()> {
+        // if self.card_deck.len() != 0 { 
+        let card = self.card_deck.pop().unwrap();
+        return Ok(card);
+        // else {
+        //     Err("The deck is empty");
+        // }
+}
 }
