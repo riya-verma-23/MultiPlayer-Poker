@@ -17,6 +17,32 @@ fn count_num(hand: Vec<Card>, find: i32){
     }
     return count;
 }
+
+fn check_all_same_suit(hand: Vec<Card>) -> u32 {
+    for i in 0..5 {
+        if hand[0].val != hand[i].val {
+            return false;
+        }
+    }
+    return true;
+}
+
+fn check_royal_flush(hand: Vec<Card>) -> bool {
+    let num: Vec<u32> = Vec::new();
+    let royal: Vec<u32> = [14, 13, 12, 11, 10];
+    //initialize num with all numbers from hand
+    for i in 0..5 {
+        num.push(hand.val);
+    }
+    //check if it contains all royal flush values
+    for i in 0..5 {
+        if !num.contains(royal[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
 fn check_quads(hand: Vec<Card>){
     quad: i32 = 0;
     single: i32 = 0;
@@ -30,6 +56,7 @@ fn check_quads(hand: Vec<Card>){
     }
     return quad + single/100;
 }
+
 fn main () {
     println!("Welcome to Poker");
     // let mycard : Card = Card::randomCard();
