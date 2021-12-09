@@ -101,15 +101,24 @@ fn check_pair(hand: Vec<Card>) -> i32 {
 
     return pair + extra[0] / 100 + extra[1] / 1000;
 }
+fn check_highcard(hand: Vec<Card>) -> i32 {
+    let mut extra: Vec<i32> = Vec::new();
+    for c in &hand {
+        extra.push(c.val);
+    }
+    extra.sort();
+    return extra[0] + extra[1] / 100 + extra[2] / 10000;
+}
 fn main() {
     println!("Welcome to Poker");
     // let mycard : Card = Card::randomCard();
     // mycard.PrintCard();
     let mut mydeck: Deck = Deck::new();
-    mydeck.PrintDeck();
-    print!("\n");
-    mydeck.PrintDeck();
-    print!("\n\n\n hand\n");
+    mydeck.shuffle();
+    //mydeck.PrintDeck();
+    // print!("\n");
+    // mydeck.PrintDeck();
+    //print!("\n\n\n hand\n");
     let hand: Vec<Card> = mydeck.GenerateHand();
     print!("{}\n", count_num(&hand.clone(), 4));
     print!("{}\n", scoreHand(hand.clone()));
