@@ -11,8 +11,8 @@ pub enum Suit{
 #[derive(Clone)]
 #[derive(Default)]
 pub struct Card {
-    val : i32,
-    suit : i32,    
+    pub val : i32,
+    pub suit : i32,    
 }
 
 impl Card {
