@@ -26,7 +26,7 @@ impl Card {
 
     pub fn randomCard() -> Card {
         let mut rng = rand::thread_rng();
-        let v = rng.gen_range(1..13);
+        let v = rng.gen_range(2..14);
         let s : i32 = rng.gen_range(1..4);
         let c = Card {
             val : v,

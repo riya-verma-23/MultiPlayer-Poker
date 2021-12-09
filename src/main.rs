@@ -4,6 +4,9 @@ use crate::card::Card;
 pub mod deck;
 use crate::deck::Deck;
 
+pub fn scoreHand(hand : Vec<Card>) -> u32 {
+    return 100;
+}
 
 fn main () {
     println!("Welcome to Poker");
@@ -15,13 +18,7 @@ fn main () {
     print!("\n");
     mydeck.PrintDeck();
     print!("\n\n\n hand\n");
-    mydeck.GenerateHand();
+    let hand: Vec<Card> = mydeck.GenerateHand();
+    print!("{}\n", scoreHand(hand));
+    
 }
-
-// pub fn scoreHand(hand : Vec<Card>, ) {
-//     let card_values : [i32;5];
-
-//     for i in &card_values {
-        
-//     }
-// }
