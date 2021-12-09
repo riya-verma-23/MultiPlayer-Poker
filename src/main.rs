@@ -45,7 +45,7 @@ fn check_all_same_suit(hand: &Vec<Card>) -> bool {
     return true;
 }
 
-fn check_royal_flush(hand: &Vec<Card>) -> bool {
+fn check_royal_flush(hand: &Vec<Card>) -> f64 {
     let mut num: Vec<i32> = Vec::new();
     let royal: Vec<i32> = [14, 13, 12, 11, 10].to_vec();
     //initialize num with all numbers from hand
@@ -55,10 +55,10 @@ fn check_royal_flush(hand: &Vec<Card>) -> bool {
     //check if it contains all royal flush values
     for i in 0..5 {
         if !num.contains(&royal[i]) {
-            return false;
+            return 0.0;
         }
     }
-    return true;
+    return 1000.0;
 }
 fn check_full_house(hand: &Vec<Card>) -> f64 {
     let mut trip: i32 = 0;
@@ -168,6 +168,15 @@ fn main() {
     let score = scoreHand(hand.clone());
     let hand_text = match score {
         x if x < 100.0 => "High Card",
+        x if x < 200.0 => "Pair",
+        x if x < 300.0 => "Two Pair",
+        x if x < 400.0 => "Three of a Kind",
+        x if x < 500.0 => "Straight",
+        x if x < 600.0 => "Flush",
+        x if x < 700.0 => "Full House",
+        x if x < 800.0 => "Four of a Kind",
+        x if x < 900.0 => "Straight Flush",
+        x if x < 1000.0 => "Royal Flush",
         _ => "Error",
     };
     print!("{}\n", hand_text);
