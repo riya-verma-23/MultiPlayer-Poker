@@ -44,8 +44,18 @@ fn check_all_same_suit(hand: &Vec<Card>) -> bool {
     }
     return true;
 }
-
-fn check_royal_flush(hand: &Vec<Card>) -> bool {
+fn check_flush(hand: Vec<Card>) -> i32 {
+    let mut num: Vec<i32> = Vec::new();
+    for i in 0..5 {
+        num.push(hand[i].val);
+    }
+    if check_all_same_suit(hand)  {
+        return *num.iter().max().unwrap();
+    } else {
+        return 0;
+    }
+}
+fn check_royal_flush(hand: Vec<Card>) -> bool {
     let mut num: Vec<i32> = Vec::new();
     let royal: Vec<i32> = [14, 13, 12, 11, 10].to_vec();
     //initialize num with all numbers from hand
