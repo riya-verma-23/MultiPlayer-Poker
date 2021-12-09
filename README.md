@@ -1,6 +1,6 @@
 # Fe2O3
 
- ** ~ Sanya Sharma, Riya Verma, and Rahul Gupta
+  ~ Sanya Sharma, Riya Verma, and Rahul Gupta
 
 ### Project Introduction
   
