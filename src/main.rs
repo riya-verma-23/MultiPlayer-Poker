@@ -11,7 +11,10 @@ pub fn scoreHand(hand: Vec<Card>) -> f64 {
     score = max(score, check_two_pair(&hand));
     score = max(score, check_triples(&hand));
     score = max(score, check_straight(&hand));
+    score = max(score, check_flush(&hand));
     score = max(score, check_full_house(&hand));
+    score = max(score, check_quads(&hand));
+    score = max(score, check_royal_flush(&hand));
     return score;
 }
 fn count_num(hand: &Vec<Card>, find: i32) -> i32 {
@@ -34,6 +37,9 @@ fn check_quads(hand: &Vec<Card>) -> f64 {
             single = c.val;
         }
     }
+    if (quad == 0) {
+        return 0.0;
+    }
     return 700.0 + quad as f64 + (single as f64) / 100.0;
 }
 fn check_all_same_suit(hand: &Vec<Card>) -> bool {
@@ -44,7 +50,17 @@ fn check_all_same_suit(hand: &Vec<Card>) -> bool {
     }
     return true;
 }
-
+fn check_flush(hand: &Vec<Card>) -> f64 {
+    let mut num: Vec<i32> = Vec::new();
+    for i in 0..5 {
+        num.push(hand[i].val);
+    }
+    if check_all_same_suit(&hand) {
+        return *num.iter().max().unwrap() as f64;
+    } else {
+        return 0.0;
+    }
+}
 fn check_royal_flush(hand: &Vec<Card>) -> f64 {
     let mut num: Vec<i32> = Vec::new();
     let royal: Vec<i32> = [14, 13, 12, 11, 10].to_vec();
@@ -163,8 +179,8 @@ fn main() {
     let mut mydeck: Deck = Deck::new();
     mydeck.shuffle();
     let hand: Vec<Card> = mydeck.GenerateHand();
-    print!("{}\n", count_num(&hand.clone(), 4));
-    print!("{}\n", scoreHand(hand.clone()));
+    //print!("{}\n", count_num(&hand.clone(), 4));
+    //print!("{}\n", scoreHand(hand.clone()));
     let score = scoreHand(hand.clone());
     let hand_text = match score {
         x if x < 100.0 => "High Card",
@@ -179,5 +195,5 @@ fn main() {
         x if x < 1000.0 => "Royal Flush",
         _ => "Error",
     };
-    print!("{}\n", hand_text);
+    print!("You had {} with score {}\n", hand_text, score);
 }
