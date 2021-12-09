@@ -17,4 +17,4 @@
 
 ### Please list some of the challenges you foresee running into.
 
-Description: Scoring the hand might get tough considering the many possibilities of a tie breaker. Also, printing the card "pretty" could become tedious.
+Scoring the hand might get tough considering the many possibilities of a tie breaker. Also, printing the card "pretty" could become tedious.
